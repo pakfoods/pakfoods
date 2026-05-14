@@ -43,6 +43,15 @@
       background: rgba(255, 255, 255, 0.82);
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { pathname, hash } = window.location;
+      if (pathname.endsWith('/index.html')) {
+        const cleanPath = pathname.slice(0, -10) + 'index';
+        window.history.replaceState(null, '', cleanPath + hash);
+      }
+    });
+  </script>
 </head>
 <body class="text-slate-800">
   <header class="sticky top-0 z-50 border-b border-white/60 bg-white/90 backdrop-blur-xl">
@@ -55,9 +64,15 @@
         </div>
       </a>
 
-      <a href="https://wa.me/923287006418" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-brandGreen px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brandGreen/20 transition hover:-translate-y-0.5 hover:bg-brandGreenDark sm:px-5">
-        <span class="hidden sm:inline">Order via</span> WhatsApp
-      </a>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://www.facebook.com/profile.php?id=61589625305575&locale=en_GB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-lg shadow-slate-200/50 transition hover:-translate-y-0.5 hover:border-brandGreen hover:text-brandGreen sm:px-5">
+          <span class="hidden sm:inline">Facebook</span>
+          <span class="sm:hidden">FB</span>
+        </a>
+        <a href="https://wa.me/923287006418" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-brandGreen px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brandGreen/20 transition hover:-translate-y-0.5 hover:bg-brandGreenDark sm:px-5">
+          Order via WhatsApp
+        </a>
+      </div>
     </div>
   </header>
 
@@ -81,6 +96,9 @@
             </a>
             <a href="#products" class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15">
               View Products
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61589625305575&locale=en_GB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15">
+              Facebook Page
             </a>
           </div>
         </div>
@@ -108,14 +126,84 @@
               </ul>
             </div>
 
-            <div class="mt-6 grid gap-3 sm:grid-cols-2">
-              <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                <p class="text-sm font-semibold text-brandGreen">Reliable distribution</p>
-                <p class="mt-1 text-sm text-slate-600">Built for timely supply and long-term customer confidence.</p>
+            <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-200/50 sm:p-6">
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brandGreen">Recent stock overview</p>
+                  <h3 class="mt-2 text-xl font-bold text-slate-900">Current product inventory</h3>
+                </div>
+                <div class="rounded-2xl bg-brandGold/15 px-4 py-3 text-right">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brandGreen">Total quantity</p>
+                  <p class="text-2xl font-extrabold text-slate-900">500 PET</p>
+                </div>
               </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                <p class="text-sm font-semibold text-brandGreen">Bulk orders</p>
-                <p class="mt-1 text-sm text-slate-600">Ideal for dealers, shops, and wholesale inquiries.</p>
+
+              <div class="mt-5 overflow-hidden rounded-2xl border border-slate-200">
+                <div class="overflow-x-auto">
+                  <table class="min-w-full text-left text-sm">
+                    <thead class="bg-slate-100 text-slate-700">
+                      <tr>
+                        <th class="px-4 py-3 font-semibold">Product</th>
+                        <th class="px-4 py-3 font-semibold">Size</th>
+                        <th class="px-4 py-3 font-semibold">Qty</th>
+                        <th class="px-4 py-3 font-semibold">Rate</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                      <tr><td class="px-4 py-3">Zee Cola</td><td class="px-4 py-3">1.0 Ltr</td><td class="px-4 py-3">150</td><td class="px-4 py-3">Rs 480</td></tr>
+                      <tr><td class="px-4 py-3">Zee Orange</td><td class="px-4 py-3">1.0 Ltr</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 480</td></tr>
+                      <tr><td class="px-4 py-3">Zee Lemon</td><td class="px-4 py-3">1.0 Ltr</td><td class="px-4 py-3">70</td><td class="px-4 py-3">Rs 480</td></tr>
+                      <tr><td class="px-4 py-3">Zee Cola</td><td class="px-4 py-3">1.5 Ltr</td><td class="px-4 py-3">100</td><td class="px-4 py-3">Rs 630</td></tr>
+                      <tr><td class="px-4 py-3">Zee Lemon</td><td class="px-4 py-3">1.5 Ltr</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 630</td></tr>
+                      <tr><td class="px-4 py-3">Zee Cola Jumbo</td><td class="px-4 py-3">2.25 Ltr</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 590</td></tr>
+                      <tr><td class="px-4 py-3">Zee Lemon Jumbo</td><td class="px-4 py-3">2.25 Ltr</td><td class="px-4 py-3">20</td><td class="px-4 py-3">Rs 590</td></tr>
+                      <tr><td class="px-4 py-3">Zee Cola Small</td><td class="px-4 py-3">300 ml</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 440</td></tr>
+                      <tr><td class="px-4 py-3">Aqua Zee Drinking Water</td><td class="px-4 py-3">Standard</td><td class="px-4 py-3">10</td><td class="px-4 py-3">Rs 280</td></tr>
+                      <tr><td class="px-4 py-3">Buzz up - sting</td><td class="px-4 py-3">Standard</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 460</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="mt-5 flex flex-col gap-3 rounded-2xl bg-brandGreen/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-sm font-semibold text-brandGreen">Grand total</p>
+                  <p class="text-xs text-slate-600">Snapshot from the latest stock sheet</p>
+                </div>
+                <p class="text-2xl font-extrabold text-slate-900">Rs 261,200</p>
+              </div>
+
+              <div class="mt-6 border-t border-slate-200 pt-6">
+                <div class="flex items-end justify-between gap-4">
+                  <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brandGreen">Product gallery</p>
+                    <h3 class="mt-2 text-xl font-bold text-slate-900">Recent stock photos</h3>
+                  </div>
+                  <p class="hidden text-sm text-slate-500 sm:block">From the latest Hafiz Foods order</p>
+                </div>
+
+                <div class="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                    <img src="./5e998ba3-2bab-4b52-b92a-cfb1385bbf8e.jpg" alt="Zee Cola product photo" class="h-56 w-full object-cover" />
+                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Cola range</figcaption>
+                  </figure>
+                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                    <img src="./61cfdef2-4fa1-4c3d-a7ae-271dc33e10ae.jpg" alt="Zee Lemon product photo" class="h-56 w-full object-cover" />
+                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Lemon range</figcaption>
+                  </figure>
+                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                    <img src="./a5697985-001d-49b4-ac69-5740e6c11140.jpg" alt="Zee Orange product photo" class="h-56 w-full object-cover" />
+                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Orange range</figcaption>
+                  </figure>
+                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                    <img src="./aa153152-c203-4222-9921-14f4a63a15e1.png" alt="Single bottle product photo" class="h-56 w-full object-cover" />
+                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Single bottle showcase</figcaption>
+                  </figure>
+                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                    <img src="./4e440f93-033c-4f62-8b8a-b215572468a7.png" alt="Green flavor product photo" class="h-56 w-full object-cover" />
+                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Green flavor variant</figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
           </div>
@@ -197,8 +285,8 @@
   </footer>
 
   <a href="https://wa.me/923287006418" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl shadow-black/25 transition hover:scale-110">
-    <svg viewBox="0 0 32 32" class="h-7 w-7 fill-current" aria-hidden="true">
-      <path d="M19.11 17.46c-.26-.13-1.53-.75-1.77-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.1-.4-2.1-1.28-.78-.7-1.31-1.56-1.46-1.82-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.46-.06-.13-.58-1.4-.8-1.92-.21-.51-.43-.44-.58-.45h-.49c-.17 0-.46.06-.7.32-.24.26-.93.91-.93 2.22 0 1.31.95 2.58 1.08 2.75.13.17 1.88 2.87 4.56 4.03.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.53-.63 1.75-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.17-.5-.3Zm-3.06 8.79h-.01a12.93 12.93 0 0 1-6.57-1.79l-.47-.28-4.9 1.29 1.31-4.77-.31-.49a12.95 12.95 0 1 1 23.88-6.91c0 7.14-5.82 12.95-12.93 12.95Zm10.99-23.93A15.62 15.62 0 0 0 16.05 0C7.23 0 .07 7.15.07 15.95c0 2.8.74 5.54 2.14 7.96L0 32l8.28-2.17a15.9 15.9 0 0 0 7.76 1.98h.01c8.82 0 15.98-7.15 15.98-15.95 0-4.27-1.67-8.28-4.99-11.54Z"/>
+    <svg viewBox="0 0 24 24" class="h-7 w-7 fill-current" aria-hidden="true">
+      <path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.5 0 0 5.4 0 11.9c0 2.1.6 4.1 1.8 5.8L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4C18.7 23.7 24 18.5 24 11.9c0-3.1-1.2-6.1-3.5-8.4ZM12.1 21.8c-1.8 0-3.5-.5-5-1.5l-.4-.3-3.9 1 1-3.8-.3-.4a9.8 9.8 0 0 1-1.6-5.1c0-5.4 4.5-9.9 10.1-9.9 2.7 0 5.2 1 7.1 2.8 1.9 1.9 3 4.4 3 7.1 0 5.5-4.4 10-10 10Zm5.4-7.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.3-1.6-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4c0 1.4 1 2.8 1.2 3 .2.2 2 3.1 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3Z"/>
     </svg>
   </a>
 </body>
