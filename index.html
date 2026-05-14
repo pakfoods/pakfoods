@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pak Foods Faisalabad | Official Distributor of Hafiz Foods</title>
   <meta name="description" content="Pak Foods Faisalabad - Official Distributor of Hafiz Foods. Quality you trust for reliable distribution, bulk orders, and dealership inquiries." />
+  <meta name="theme-color" content="#0f5a2f" />
+  <meta property="og:title" content="Pak Foods Faisalabad | Hafiz Foods Distributor" />
+  <meta property="og:description" content="Official distributor of Hafiz Foods in Faisalabad. Zee Cola, Zee Lemon, Zee Orange, Aqua Zee, and more. Bulk orders welcome." />
+  <meta property="og:image" content="./WhatsApp%20Image%202026-05-14%20at%2012.03.46%20PM.jpeg" />
+  <meta property="og:type" content="business.business" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pak Foods Faisalabad" />
+  <meta name="twitter:description" content="Official Hafiz Foods distributor in Faisalabad" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -42,15 +50,74 @@
       backdrop-filter: blur(14px);
       background: rgba(255, 255, 255, 0.82);
     }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const { pathname, hash } = window.location;
-      if (pathname.endsWith('/index.html')) {
-        const cleanPath = pathname.slice(0, -10) + 'index';
-        window.history.replaceState(null, '', cleanPath + hash);
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
-    });
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .animate-in {
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+    img[loading="lazy"] {
+      background: linear-gradient(90deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02), rgba(0,0,0,0.05));
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .form-success {
+      animation: fadeIn 0.4s ease-out;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+      border-color: rgb(34, 197, 94);
+    }
+    .form-error {
+      animation: fadeIn 0.4s ease-out;
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+      border-color: rgb(239, 68, 68);
+    }
+    .back-to-top {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Pak Foods Faisalabad",
+      "description": "Official Distributor of Hafiz Foods",
+      "url": "https://pakfoods.github.io/pakfoods/",
+      "image": "./WhatsApp%20Image%202026-05-14%20at%2012.03.46%20PM.jpeg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Samundri Road near Roshan Wala Bypass, Yasir Town",
+        "addressLocality": "Faisalabad",
+        "addressCountry": "PK"
+      },
+      "telephone": "03287006418",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": ["03287006418", "03487676649", "03237178807"]
+      },
+      "priceRange": "$$"
+    }
   </script>
 </head>
 <body class="text-slate-800">
@@ -129,81 +196,33 @@
             <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-200/50 sm:p-6">
               <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brandGreen">Recent stock overview</p>
-                  <h3 class="mt-2 text-xl font-bold text-slate-900">Current product inventory</h3>
+                  <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brandGreen">Product showcase</p>
+                  <h3 class="mt-2 text-xl font-bold text-slate-900">What we stock and sell</h3>
                 </div>
-                <div class="rounded-2xl bg-brandGold/15 px-4 py-3 text-right">
-                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brandGreen">Total quantity</p>
-                  <p class="text-2xl font-extrabold text-slate-900">500 PET</p>
-                </div>
+                <p class="hidden text-sm text-slate-500 sm:block">Visual catalog only</p>
               </div>
 
-              <div class="mt-5 overflow-hidden rounded-2xl border border-slate-200">
-                <div class="overflow-x-auto">
-                  <table class="min-w-full text-left text-sm">
-                    <thead class="bg-slate-100 text-slate-700">
-                      <tr>
-                        <th class="px-4 py-3 font-semibold">Product</th>
-                        <th class="px-4 py-3 font-semibold">Size</th>
-                        <th class="px-4 py-3 font-semibold">Qty</th>
-                        <th class="px-4 py-3 font-semibold">Rate</th>
-                      </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 bg-white">
-                      <tr><td class="px-4 py-3">Zee Cola</td><td class="px-4 py-3">1.0 Ltr</td><td class="px-4 py-3">150</td><td class="px-4 py-3">Rs 480</td></tr>
-                      <tr><td class="px-4 py-3">Zee Orange</td><td class="px-4 py-3">1.0 Ltr</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 480</td></tr>
-                      <tr><td class="px-4 py-3">Zee Lemon</td><td class="px-4 py-3">1.0 Ltr</td><td class="px-4 py-3">70</td><td class="px-4 py-3">Rs 480</td></tr>
-                      <tr><td class="px-4 py-3">Zee Cola</td><td class="px-4 py-3">1.5 Ltr</td><td class="px-4 py-3">100</td><td class="px-4 py-3">Rs 630</td></tr>
-                      <tr><td class="px-4 py-3">Zee Lemon</td><td class="px-4 py-3">1.5 Ltr</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 630</td></tr>
-                      <tr><td class="px-4 py-3">Zee Cola Jumbo</td><td class="px-4 py-3">2.25 Ltr</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 590</td></tr>
-                      <tr><td class="px-4 py-3">Zee Lemon Jumbo</td><td class="px-4 py-3">2.25 Ltr</td><td class="px-4 py-3">20</td><td class="px-4 py-3">Rs 590</td></tr>
-                      <tr><td class="px-4 py-3">Zee Cola Small</td><td class="px-4 py-3">300 ml</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 440</td></tr>
-                      <tr><td class="px-4 py-3">Aqua Zee Drinking Water</td><td class="px-4 py-3">Standard</td><td class="px-4 py-3">10</td><td class="px-4 py-3">Rs 280</td></tr>
-                      <tr><td class="px-4 py-3">Buzz up - sting</td><td class="px-4 py-3">Standard</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Rs 460</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="mt-5 flex flex-col gap-3 rounded-2xl bg-brandGreen/5 p-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p class="text-sm font-semibold text-brandGreen">Grand total</p>
-                  <p class="text-xs text-slate-600">Snapshot from the latest stock sheet</p>
-                </div>
-                <p class="text-2xl font-extrabold text-slate-900">Rs 261,200</p>
-              </div>
-
-              <div class="mt-6 border-t border-slate-200 pt-6">
-                <div class="flex items-end justify-between gap-4">
-                  <div>
-                    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brandGreen">Product gallery</p>
-                    <h3 class="mt-2 text-xl font-bold text-slate-900">Recent stock photos</h3>
-                  </div>
-                  <p class="hidden text-sm text-slate-500 sm:block">From the latest Hafiz Foods order</p>
-                </div>
-
-                <div class="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
-                    <img src="./5e998ba3-2bab-4b52-b92a-cfb1385bbf8e.jpg" alt="Zee Cola product photo" class="h-56 w-full object-cover" />
-                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Cola range</figcaption>
-                  </figure>
-                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
-                    <img src="./61cfdef2-4fa1-4c3d-a7ae-271dc33e10ae.jpg" alt="Zee Lemon product photo" class="h-56 w-full object-cover" />
-                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Lemon range</figcaption>
-                  </figure>
-                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
-                    <img src="./a5697985-001d-49b4-ac69-5740e6c11140.jpg" alt="Zee Orange product photo" class="h-56 w-full object-cover" />
-                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Orange range</figcaption>
-                  </figure>
-                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
-                    <img src="./aa153152-c203-4222-9921-14f4a63a15e1.png" alt="Single bottle product photo" class="h-56 w-full object-cover" />
-                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Single bottle showcase</figcaption>
-                  </figure>
-                  <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
-                    <img src="./4e440f93-033c-4f62-8b8a-b215572468a7.png" alt="Green flavor product photo" class="h-56 w-full object-cover" />
-                    <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Green flavor variant</figcaption>
-                  </figure>
-                </div>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                  <img loading="lazy" src="./5e998ba3-2bab-4b52-b92a-cfb1385bbf8e.jpg" alt="Zee Cola product photo" class="h-56 w-full object-cover" />
+                  <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Cola</figcaption>
+                </figure>
+                <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                  <img loading="lazy" src="./61cfdef2-4fa1-4c3d-a7ae-271dc33e10ae.jpg" alt="Zee Lemon product photo" class="h-56 w-full object-cover" />
+                  <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Lemon</figcaption>
+                </figure>
+                <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                  <img loading="lazy" src="./a5697985-001d-49b4-ac69-5740e6c11140.jpg" alt="Zee Orange product photo" class="h-56 w-full object-cover" />
+                  <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Zee Orange</figcaption>
+                </figure>
+                <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                  <img loading="lazy" src="./aa153152-c203-4222-9921-14f4a63a15e1.png" alt="Aqua Zee Drinking Water product photo" class="h-56 w-full object-cover" />
+                  <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Aqua Zee Drinking Water</figcaption>
+                </figure>
+                <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                  <img loading="lazy" src="./4e440f93-033c-4f62-8b8a-b215572468a7.png" alt="Buzz Up Sting product photo" class="h-56 w-full object-cover" />
+                  <figcaption class="px-4 py-3 text-sm font-medium text-slate-700">Buzz Up Sting</figcaption>
+                </figure>
               </div>
             </div>
           </div>
@@ -239,25 +258,40 @@
           </div>
         </div>
 
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8">
+        <form id="contact-form" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8">
+          <div id="form-success" class="hidden mb-4 rounded-2xl border border-green-300 bg-green-50 p-4">
+            <p class="text-sm font-semibold text-green-800">✓ Thank you! We've received your inquiry and will get back to you soon.</p>
+          </div>
+          <div id="form-error" class="hidden mb-4 rounded-2xl border border-red-300 bg-red-50 p-4">
+            <p id="form-error-text" class="text-sm font-semibold text-red-800"></p>
+          </div>
           <div class="grid gap-5">
             <div>
               <label for="name" class="mb-2 block text-sm font-medium text-slate-700">Name</label>
-              <input id="name" name="name" type="text" required class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brandGreen focus:bg-white focus:ring-4 focus:ring-brandGreen/10" placeholder="Your name" />
+              <input id="name" name="name" type="text" required aria-required="true" class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brandGreen focus:bg-white focus:ring-4 focus:ring-brandGreen/10" placeholder="Your name" />
+              <span id="name-error" class="hidden text-xs text-red-600 mt-1 block"></span>
             </div>
 
             <div>
               <label for="phone" class="mb-2 block text-sm font-medium text-slate-700">Phone Number</label>
-              <input id="phone" name="phone" type="tel" required class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brandGreen focus:bg-white focus:ring-4 focus:ring-brandGreen/10" placeholder="03xx xxxxxxx" />
+              <input id="phone" name="phone" type="tel" required aria-required="true" class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brandGreen focus:bg-white focus:ring-4 focus:ring-brandGreen/10" placeholder="03xx xxxxxxx" />
+              <span id="phone-error" class="hidden text-xs text-red-600 mt-1 block"></span>
             </div>
 
             <div>
               <label for="message" class="mb-2 block text-sm font-medium text-slate-700">Message</label>
-              <textarea id="message" name="message" rows="6" required class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brandGreen focus:bg-white focus:ring-4 focus:ring-brandGreen/10" placeholder="Tell us about your order or dealership inquiry"></textarea>
+              <textarea id="message" name="message" rows="6" required aria-required="true" class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brandGreen focus:bg-white focus:ring-4 focus:ring-brandGreen/10" placeholder="Tell us about your order or dealership inquiry"></textarea>
+              <span id="message-error" class="hidden text-xs text-red-600 mt-1 block"></span>
             </div>
 
-            <button type="submit" class="inline-flex items-center justify-center rounded-full bg-brandGreen px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brandGreen/20 transition hover:-translate-y-0.5 hover:bg-brandGreenDark">
-              Submit Inquiry
+            <button id="submit-btn" type="submit" class="inline-flex items-center justify-center rounded-full bg-brandGreen px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brandGreen/20 transition hover:-translate-y-0.5 hover:bg-brandGreenDark disabled:opacity-70 disabled:cursor-not-allowed">
+              <span id="btn-text">Submit Inquiry</span>
+              <span id="btn-loader" class="hidden ml-2">
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </span>
             </button>
           </div>
         </form>
@@ -289,5 +323,92 @@
       <path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.5 0 0 5.4 0 11.9c0 2.1.6 4.1 1.8 5.8L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4C18.7 23.7 24 18.5 24 11.9c0-3.1-1.2-6.1-3.5-8.4ZM12.1 21.8c-1.8 0-3.5-.5-5-1.5l-.4-.3-3.9 1 1-3.8-.3-.4a9.8 9.8 0 0 1-1.6-5.1c0-5.4 4.5-9.9 10.1-9.9 2.7 0 5.2 1 7.1 2.8 1.9 1.9 3 4.4 3 7.1 0 5.5-4.4 10-10 10Zm5.4-7.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.3-1.6-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4c0 1.4 1 2.8 1.2 3 .2.2 2 3.1 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3Z"/>
     </svg>
   </a>
-</body>
-</html>
+
+  <a href="#home" aria-label="Back to top" class="back-to-top fixed bottom-24 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-brandGreen text-white shadow-xl shadow-brandGreen/30 transition hover:scale-110 hover:bg-brandGreenDark">
+    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4" />
+    </svg>
+  </a>
+
+  <script>
+    // Form handling with Formspree AJAX
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnLoader = document.getElementById('btn-loader');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+    const formErrorText = document.getElementById('form-error-text');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Hide previous messages
+        formSuccess.classList.add('hidden');
+        formError.classList.add('hidden');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.classList.add('hidden');
+        btnLoader.classList.remove('hidden');
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch('https://formspree.io/f/mnjwykjr', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json',
+            },
+          });
+
+          if (response.ok) {
+            // Success
+            formSuccess.classList.remove('hidden');
+            contactForm.reset();
+            
+            // Reset button
+            submitBtn.disabled = false;
+            btnText.classList.remove('hidden');
+            btnLoader.classList.add('hidden');
+            
+            // Scroll to success message
+            setTimeout(() => {
+              formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 300);
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          formError.classList.remove('hidden');
+          formErrorText.textContent = 'Error sending message. Please try again.';
+          
+          // Reset button
+          submitBtn.disabled = false;
+          btnText.classList.remove('hidden');
+          btnLoader.classList.add('hidden');
+        }
+      });
+    }
+
+    // Back to top button visibility
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    // URL cleanup for index.html
+    document.addEventListener('DOMContentLoaded', () => {
+      const { pathname, hash } = window.location;
+      if (pathname.endsWith('/index.html')) {
+        const cleanPath = pathname.slice(0, -10) + 'index';
+        window.history.replaceState(null, '', cleanPath + hash);
+      }
+    });
+  </script>
